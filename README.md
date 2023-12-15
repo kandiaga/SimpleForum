@@ -12,7 +12,7 @@ SimpleForum is accessible, powerful, and provides features required to build a l
 
 ## SimpleForum Sponsors
 
-We would like to extend our thanks to the following sponsors for funding SimpleForum development. If you are interested in becoming a sponsor, please visit the [SimpleForum Partners program](https://partners.SimpleForum.com).
+ If you are interested in becoming a sponsor, please visit the [SimpleForum Partners program](https://www.buymeacoffee.com/ndiaga).
 
 
 ## License
