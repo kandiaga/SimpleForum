@@ -17,8 +17,12 @@ class ForumController extends Controller
 	
 		public function index()
 	{
+		  
+		
 		$categories = Category::all();
 		//$topics = Topic::all();
+		$onlineUsers = Author::where('online', true)->get();
+
 		$topics = Topic::orderBy('id_topic', 'desc')->take(5)->get();
 		return view('forum.index_home', compact('categories','topics'));
 	}
@@ -36,6 +40,16 @@ class ForumController extends Controller
 		return view('forum.user_content', compact('user','answers','topics'));
     }
 
+
+
+    	public function online()
+	{
+			
+		$onlineUsers = Author::where('online', true)->get();
+
+		
+		return view('forum.online', compact('onlineUsers'));
+	}
 	
 	
 	

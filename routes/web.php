@@ -121,6 +121,7 @@ Route::get('/forums', [ForumController::class, 'index']);
 Route::get('/forums/profile/{user}', [AuthorController::class, 'show'])->name('authors.show');
 
 Route::get('/forums/profile/{id}-{username}/content/', [ForumController::class, 'content'])->name('content');
+Route::get('/forums/online/', [ForumController::class, 'online'])->name('online');
 
 
 

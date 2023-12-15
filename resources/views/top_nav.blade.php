@@ -19,7 +19,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
-            </li>			
+            </li>	
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/forums/online/') }}">Online</a>
+            </li>
+           			
 			 <!-- Check if the user is logged in -->
                     
              @if(auth()->guard('author')->check())
