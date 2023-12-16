@@ -46,7 +46,7 @@
         <!-- Add more user details as needed -->
     </div>
     <!-- User Activity Feed -->
-    		
+       
     </div>	
 	<div class="container mt-3">  
     <ul class="nav nav-tabs" id="profileTabs">
@@ -83,8 +83,9 @@
 	     @else	
 	     {{ $user->username }}'
           @endif	
-            Latest Activity
+            Latest Activity   
 		</h3>
+		Last visited :  {{ $user->last_visited }} 
           <!-- List of recent topics goes here -->
           <ul class="topic-list">		  
 		  @foreach($topics as $topic)			
@@ -124,6 +125,34 @@
         <div class="tab-pane fade" id="achievements">
             <h3>Achievements</h3>
             <!-- Add your Recent Profile Achievements content here -->
+			<ul>
+			@if($user->online==1)	
+			<li>
+			<p style="color:green;"> <strong>{{ $user->username }}</strong> Is currently Online <i class="fas fa-circle text-success"></i> <!-- Online --></p>
+            </li> 
+           @else	
+	           <li>
+		      <p style="color:gray;"> <strong>{{ $user->username }} Is currently Offline </strong> <i class="fas fa-circle text-muted"></i><!-- Offline --></p>
+			  </li>
+			  <li>
+		      <p style="color:gray;"><strong>Last visited : </strong> {{ transformDate($user->last_visited) }} </p>
+			  </li>
+		   @endif 
+               <li><p style="color:gray;"><strong>Joined :</strong> <time datetime="{{ $user->created_at }}">{{ \Carbon\Carbon::parse($user->created_at)->format('M j, Y') }}</time> </p></li>			   
+	         
+			  <li>
+		      <p style="color:gray;"><strong> Community Answers: </strong> {{  communityAnswers($user->id_author) }} </p>
+			  </li>
+			  <li>
+		      <p style="color:gray;"><strong> Opened Topics: </strong> {{  openedTopics($user->id_author) }} </p>
+			  </li>
+			  
+			 <li>
+		      <p style="color:gray;"><strong>Posts : </strong> {{  postCount($user->id_author) }} </p>
+			  </li>
+			  
+			 
+			 <ul>
         </div>
 		<!-- Header Followers Tab Content -->
         <div class="tab-pane fade" id="followers">

@@ -44,7 +44,9 @@ class Author extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
 		'online',
-		'current_page',
+		'current_page_url',
+		'current_page_name',
+		'last_visited',
     ];
 		
 	

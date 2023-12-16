@@ -14,7 +14,7 @@ use App\Models\Category;
 use App\Models\ProfileVisitor;
 use App\Models\Follower;
 
-
+use Carbon\Carbon;
 
 class AuthorController extends Controller
 {
@@ -152,6 +152,7 @@ class AuthorController extends Controller
 			$userRecord =Author::where('email', $email)->first();  
 			if ($userRecord) {
 				$userRecord->online = true;
+				$userRecord->last_visited =now();
 				$userRecord->save();
 			}
 
@@ -182,6 +183,7 @@ class AuthorController extends Controller
 			$userRecord =Author::where('id_author', $id_author)->first();  
 			if ($userRecord) {
 				$userRecord->online =false;
+				$userRecord->last_visited =now();
 				$userRecord->save();
 			}
 			
@@ -358,5 +360,11 @@ class AuthorController extends Controller
 		}
     // Rest of your code...
    }
+   
+   
+   
+   
+   
+
 	
 }

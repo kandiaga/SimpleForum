@@ -19,7 +19,7 @@
                 @foreach($onlineUsers as $user)
                     <li class="list-group-item">					
 					<a href="/forums/profile/{{ $user->id_author }}">{{ $user->username }}</a>
-					is viewing: <a href="{{ $user->current_page }}"> {{ $user->current_page ?: 'Unknown page' }} </a>
+					is viewing: <a href="{{ $user->current_page_url }}"> {{ $user->current_page_name ?: 'Unknown page' }} </a>
 					</li>
                 @endforeach
             </ul>

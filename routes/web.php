@@ -197,7 +197,7 @@ Route::post('/login', [AuthorController::class, 'login']);
 Route::post('/logout', [AuthorController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [AuthorController::class, 'showDashboard'])->name('dashboard');
 Route::post('/follow/{user}', [AuthorController::class, 'follow'])->name('follow');
-Route::get('/forums/profile/{id}', [AuthorController::class, 'show'])->name('authors.show');
+Route::get('/forums/profile/{id}-{username}', [AuthorController::class, 'show'])->name('authors.show');
 
 
 //});

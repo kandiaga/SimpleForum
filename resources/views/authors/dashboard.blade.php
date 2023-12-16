@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Profile</title>
+    <title>{{$user->username}}</title>
 	@include('../head')
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	
@@ -43,7 +43,7 @@
    @include('layouts.author_profile')
    
 @else
-	 <button   class="btn btn-outline-primary"> Your are Following {{$user->username}}</button>	
+	 <button   class="btn btn-outline-primary">{{$user->username}}'s Profile </button>	
           <button   class="btn btn-primary float-right"><a href="{{ url("/forums/profile/{$user->id_author}-{$user->username}/content/") }}"  style="color:white;">View  all Posts </a></button>	  	  	  
     <!-- Show content for guests -->
     @include('layouts.author_profile')
